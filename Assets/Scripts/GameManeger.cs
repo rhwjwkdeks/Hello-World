@@ -34,6 +34,7 @@ public class GameManeger : MonoBehaviour
         foreach (var spawnPoint in spawnPoints)
         {
             GameObject cubePoint = Instantiate(templateObjective);
+            cubePoint.transform.parent = this.transform;
             cubePoint.transform.position = spawnPoint.position;
             cubePoint.GetComponent<Objective>().point = Random.Range(1, 1000);
         }
